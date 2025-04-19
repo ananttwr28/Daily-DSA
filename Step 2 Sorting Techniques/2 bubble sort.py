@@ -16,9 +16,9 @@ TC O(N^2), SC O(1)
 arr = [13,46,24,52,20,9]
 
 def bubble_sort(arr):
-    swapped = 0
     n = len(arr)
     for i in range(0, n-1):
+        swapped = 0       # moved it here instead of before i loop coz it should be take fresh 0 value after each ith iteration else it would have been set bcz of previous iterations and will check again
         for j in range(n-1-i):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
