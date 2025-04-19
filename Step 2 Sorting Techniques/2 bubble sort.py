@@ -22,9 +22,9 @@ def bubble_sort(arr):
         for j in range(n-1-i):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-                swapped = 1        # if after 1st iteration of i, no swap took place means all the elements are in sorted order, since no element was like j>j+1
+                swapped = 1        # if after 1st iteration of i, no swap took place means all the elements are in sorted order, since no element was greater than the one after it.
         if swapped == 0:
-            break    # break out of the outer loop also so only 1 const operation will be made hence the TC will be O(1)*O(N)
+            break    # break out of the outer loop, so only 1 iteration of i loop will be made hence the TC will be O(1)*O(N) 
     return arr
 
 
