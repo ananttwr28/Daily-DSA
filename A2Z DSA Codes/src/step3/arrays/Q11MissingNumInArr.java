@@ -4,10 +4,9 @@ https://takeuforward.org/arrays/find-the-missing-number-in-an-array/
 */
 
 package step3.arrays;
-import java.util.Arrays;        // importing Arrays class for using sort method
 //import java.util.HashMap;
 //import java.util.Map;
-import java.util.*;         // import all public classes at once
+
 
 /*
 ------------ Brute Force -------------- TC - O(N^2), SC - O(1)
@@ -18,7 +17,7 @@ iterate from 0 to N, the original non-missing range and check if each i exist in
 
 /*
 
-public class MissingNumInArrQ11 {
+public class Q11MissingNumInArr {
     public int missingNumber(int[] nums) {
         for(int i = 0; i <= nums.length; i++) {
             boolean found = false;
@@ -36,7 +35,7 @@ public class MissingNumInArrQ11 {
     }
 
     public static void main(String[] args) {
-        MissingNumInArrQ11 obj = new MissingNumInArrQ11();
+        Q11MissingNumInArr obj = new Q11MissingNumInArr();
         int[] input = {0, 1, 2, 4, 5};
         int missing = obj.missingNumber(input);
         System.out.println("Missing number: " + missing);
@@ -53,7 +52,7 @@ sort the arr if not mentioned, run loop from 0 to n-1 check if i != arr[i] retur
 */
 
 /*
-public class MissingNumInArrQ11 {
+public class Q11MissingNumInArr {
     public int missingNumber(int[] nums) {
         Arrays.sort(nums);      // TC O(NlogN), SC O(logN)
 
@@ -66,7 +65,7 @@ public class MissingNumInArrQ11 {
     }
 
     public static void main(String[] args) {
-        MissingNumInArrQ11 obj = new MissingNumInArrQ11();
+        Q11MissingNumInArr obj = new Q11MissingNumInArr();
         int[] input = {0, 1, 2, 4, 5};
         int missing = obj.missingNumber(input);
         System.out.println("Missing number: " + missing);
@@ -85,7 +84,7 @@ hashmap is unordered in java TC for operations is O(1) and SC of map is O(size)
 */
 
 /*
-public class MissingNumInArrQ11 {
+public class Q11MissingNumInArr {
     public int missingNumber(int[] nums) {
         Map<Integer, Integer> mp = new HashMap<>();         // Map tells that create a structure where key and value are int,
         // new HashMap tells that create it of type Hashmap other types are linkedmap and tree..
@@ -109,7 +108,7 @@ public class MissingNumInArrQ11 {
     }
 
     public static void main(String[] args) {
-        MissingNumInArrQ11 obj = new MissingNumInArrQ11();
+        Q11MissingNumInArr obj = new Q11MissingNumInArr();
         int[] input = {0, 1, 2, 4, 5};
         int missing = obj.missingNumber(input);
         System.out.println("Missing number: " + missing);
@@ -127,7 +126,7 @@ not suitable for long values as int cant hold large values
 
 
 /*
-public class MissingNumInArrQ11 {
+public class Q11MissingNumInArr {
     public int missingNumber(int[] nums) {
         int n = nums.length;
         int act_sum = 0;
@@ -141,7 +140,7 @@ public class MissingNumInArrQ11 {
     }
 
     public static void main(String[] args) {
-        MissingNumInArrQ11 obj = new MissingNumInArrQ11();
+        Q11MissingNumInArr obj = new Q11MissingNumInArr();
         int[] input = {0, 1, 2, 4, 5};
         int missing = obj.missingNumber(input);
         System.out.println("Missing number: " + missing);
@@ -157,7 +156,7 @@ approach - xor of same nums is 0 and 0 ^ num = num
 */
 
 
-public class MissingNumInArrQ11 {
+public class Q11MissingNumInArr {
     public int missingNumber(int[] nums) {
         int idx_xor = 0;
         int arr_xor = 0;
@@ -172,7 +171,7 @@ public class MissingNumInArrQ11 {
     }
 
     public static void main(String[] args) {
-        MissingNumInArrQ11 obj = new MissingNumInArrQ11();
+        Q11MissingNumInArr obj = new Q11MissingNumInArr();
         int[] input = {0, 1, 2, 4, 5};
         int missing = obj.missingNumber(input);
         System.out.println("Missing number: " + missing);
