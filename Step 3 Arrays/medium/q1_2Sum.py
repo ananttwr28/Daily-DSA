@@ -87,7 +87,7 @@ def find_indices(nums, target):
     n = len(nums)
     new_list = []
 
-    for i in range(0, n):    # TC O(NlogN)
+    for i in range(0, n):    # TC O(N)
         new_list.append((nums[i], i))   # SC O(N)
 
     # sort the new list based on element not on idx --> TC O(NlogN)
