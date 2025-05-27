@@ -18,7 +18,7 @@ def find_majority_element(nums):
         if c == 0:
             leader = nums[i]
             c = 1
-        if nums[i] == leader:
+        elif nums[i] == leader:     # small mistake fix elif here not if, bcz after resetting leader and adding the same nums[i] count will again inc the count and ans will be wrong
             c += 1
         else:
             c -= 1
