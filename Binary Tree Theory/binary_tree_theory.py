@@ -74,7 +74,39 @@ def levelorder(root):           # TC O(N) visiting each node at max once, SC O(M
                 q.append(curr.right)
 
 # <----------------------------------------------------------------------------------->
-		
+
+# <------------------------- sum of nodes at kth level ------------------------------------------>
+
+def sum_at_kth_level(root, k):       # TC O(N+N)   going to each node once, adding in q once and popping it once. # SC O(N) space for q at max O(N) at WC, no recursion so no stack space  
+    if root is None:
+        return 0
+    queue = deque()      
+    queue.append(root)   
+    
+    level = 0
+
+    while queue:        
+        size = len(queue)
+
+        if level == k:
+            level_sum = 0
+            for node in queue:      # At max this for loop will also run for O(N) TC to calculate sum 
+                level_sum += node.val
+            return level_sum
+        
+        for _ in range(size):       # At max the for loop will run for O(N) TC, bcz that number of nodes are there in q
+            curr = queue.popleft()
+
+            if curr.left:
+                queue.append(curr.left)     # Append is O(1) TC
+            if curr.right:
+                queue.append(curr.right)
+        
+        level += 1
+    
+    return 0        # if k is > height
+
+# <----------------------------------------------------------------------------------->
 
 # <------------------------- Count of Nodes ------------------------------------------>
 
@@ -159,6 +191,14 @@ def diameter2(root) -> TreeInfo:           # return type is TreeInfo class, as h
 
 if __name__ == "__main__":			# 4. main fn. execution will start here, we will create binary tree here
     nodes = [1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1]
+    '''
+         1          Preorder seq is given
+       /   \
+      2      3
+    /   \     \
+   4     5      6
+
+    '''
     # 5. create obj of BTree class
     tree = BinaryTree()
     
@@ -171,6 +211,10 @@ if __name__ == "__main__":			# 4. main fn. execution will start here, we will cr
 
     print()
     levelorder(root)
+
+# <------------------------- Sum of Nodes at kth level ------------------------------------------>
+    sum_of_nodes_at_kth_level = sum_at_kth_level(root, 1)
+    print("Sum of Nodes at kth level: ", sum_of_nodes_at_kth_level)
 
 # <------------------------- Count of Nodes ------------------------------------------>
     num_of_nodes = count_of_nodes(root)
